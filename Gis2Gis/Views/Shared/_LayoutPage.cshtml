@@ -1,24 +1,49 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full" data-id="dgLoader"></script>
-    <script type="text/javascript">
-        var map;
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        DG.then(function () {
-            map = DG.map('map', {
-                "center": [54.98, 82.89],
-                "zoom": 13
-            });
-        });
-    </script>
+    <title>@ViewBag.Title</title>
+
+    <script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full" data-id="dgLoader"></script>
+    <script src="http://catalog.api.2gis.ru/assets/apitracker.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/map")
+
 </head>
+
 <body>
-    <div>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Карта</a></li>
+                    <li role="presentation"><a href="#">Описание</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Найди оптимальный путь!</h3>
+        </div>
+
         @RenderBody()
-    </div>
+
+        <footer class="footer">
+            <p>&copy; Company 2014</p>
+        </footer>
+
+    </div> <!-- /container -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/npm")
+    @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
+
+

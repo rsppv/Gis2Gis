@@ -1,6 +1,9 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
-    ViewBag.Title = "Gis2Gis";
+    ViewBag.Title = "Оптимальный маршрут";
 }
 
-<div id="map" style="width:500px; height:400px"></div>
+<div class="row marketing">
+    @Html.Partial("Forms")
+    <div id="map" class="col-lg-8"></div>
+</div>
