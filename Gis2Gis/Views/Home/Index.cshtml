@@ -1,9 +1,15 @@
-﻿@{
+﻿
+@{
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
     ViewBag.Title = "Оптимальный маршрут";
 }
 
 <div class="row marketing">
-    @Html.Partial("Forms")
+    
+    <div class="col-lg-4">
+        @Html.Partial("Forms")
+        <p>@ViewBag.Json</p>
+    </div>
     <div id="map" class="col-lg-8"></div>
+
 </div>

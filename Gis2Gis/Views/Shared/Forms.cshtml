@@ -1,18 +1,20 @@
-﻿
-<div class="col-lg-4">
-    <form>
-        
+﻿@model string
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {     
         <div class="form-group">
-            <label for="query1">Введите запрос</label>
-            <input type="text" class="form-control" id="query1" placeholder="Введите тип объекта">
+            @*<label for="query1">Введите запрос</label>*@
+            @Html.Label("Введите запрос")
+            @Html.TextBox("query")
+            @*<input type="text" class="form-control" id="query1" placeholder="Введите тип объекта">*@
         </div>
         
-        <p class="pull-right">
+        <div class="form-group pull-right">
             <button type="reset" class="btn btn-default btn-sm">Сброс</button>
-            <button type="submit" class="btn btn-primary btn-sm">Поиск</button>
-        </p>
+            <input type="submit" value="Поиск" class="btn btn-primary btn-sm"/>
+        </div>
 
-    </form>
-</div>
+    }
+
 
 
